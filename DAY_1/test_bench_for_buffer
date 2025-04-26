@@ -1,0 +1,16 @@
+module tb_buffer(    );
+reg a;
+wire y;
+buffer dut(.a(a), .y(y));
+initial 
+    begin
+    a=0; #1;
+    $display("time=%0t,a=%b,y=%b", $time,a,y);
+    a=1; #1;
+    $display("time=%0t,a=%b,y=%b", $time,a,y);
+    a=1'bx; #1;
+    $display("time=%0t,a=%b,y=%b", $time,a,y);
+    a=1'bz; #1;
+    $display("time=%0t,a=%b,y=%b", $time,a,y);
+    end
+endmodule
