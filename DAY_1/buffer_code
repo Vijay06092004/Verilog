@@ -1,0 +1,5 @@
+module buffer(a,y);
+input a;
+output y;
+buf p(y,a);
+endmodule
