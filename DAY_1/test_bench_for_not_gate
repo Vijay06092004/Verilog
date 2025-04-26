@@ -1,0 +1,16 @@
+module tb_not_gate(  );
+reg a;
+wire y;
+NOT_GATE dut(.a(a), .y(y));
+initial 
+      begin 
+      a=0; #100;
+      $display("time=%0t, a=%b, y=%b", $time,a,y);
+      a=1; #100;
+      $display("time=%0t, a=%b, y=%b", $time,a,y);
+      a=1'bx; #100;
+      $display("time=%0t, a=%b, y=%b", $time,a,y);
+      a=1'bz; #100;
+      $display("time=%0t, a=%b, y=%b", $time,a,y);
+      end
+endmodule
