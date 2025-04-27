@@ -1,0 +1,13 @@
+// test bench code
+module tb_andgate(   );
+reg a;
+reg b;
+wire and_gate;
+andgate uut (.and_gate(and_gate), .a(a), .b(b));
+initial begin
+a = 0 ; b =0 ; #10;
+a = 0 ; b =1 ; #10;
+a = 1 ; b =0 ; #10;
+a = 1 ; b =1 ; #10;
+end
+endmodule
