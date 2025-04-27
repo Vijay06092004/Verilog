@@ -1,0 +1,7 @@
+// data flow modelling
+module EX_NOR_gate(
+input a,b,
+output y
+    );
+ assign y = !(a^b);
+endmodule
