@@ -1,0 +1,7 @@
+// gate level modelling
+module EX_NOR_gate(
+input a,b,
+output y
+    );
+    xnor x(y,a,b);
+endmodule
