@@ -1,0 +1,11 @@
+module EX_OR_gate(
+    input a,
+    input b,
+    output reg y
+);
+
+always @(a or b) begin
+    y = a ^ b;  // XOR operation
+end
+
+endmodule
