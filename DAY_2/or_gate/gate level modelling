@@ -1,0 +1,5 @@
+module or_gate(a,b,y);
+input a,b;
+output y;
+or x(y,a,b);
+endmodule
