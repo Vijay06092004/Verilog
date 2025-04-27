@@ -1,6 +1,0 @@
-module or_gate(a,b,y);
-input a,b;
-output reg y;
-always@(a or b)
-y = a | b;
-endmodule
