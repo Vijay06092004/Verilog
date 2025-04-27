@@ -1,0 +1,9 @@
+// behavioural modelling
+module EX_NOR_gate(
+input a,b,
+output reg y
+    );
+always@(a or b) begin
+assign y = !(a^b);
+end
+endmodule
