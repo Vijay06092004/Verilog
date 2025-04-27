@@ -1,0 +1,5 @@
+module EX_OR_gate(a,b,y);
+input a,b;
+output y;
+xor x(y,a,b);
+endmodule
