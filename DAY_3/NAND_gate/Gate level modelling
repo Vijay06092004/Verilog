@@ -1,0 +1,6 @@
+// Gate level modelling
+module NAND_gate(a,b,y);
+input a,b;
+output y;
+nand x(y,a,b);
+endmodule
