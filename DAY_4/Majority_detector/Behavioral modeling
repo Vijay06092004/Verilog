@@ -1,0 +1,14 @@
+// Behavioral modeling
+module majority_detector(a, b, c, y);
+input a, b, c;
+output reg y;
+
+always @ (a or b or c)
+begin
+    if ((a + b + c) >= 2)
+        y = 1;
+    else
+        y = 0;
+end
+
+endmodule
