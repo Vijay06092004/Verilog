@@ -1,0 +1,8 @@
+// Gate-level modeling (without extra wires
+module majority_detector(a, b, c, y);
+input a, b, c;
+output y;
+
+or (y, (a & b), (b & c), (a & c));
+
+endmodule
