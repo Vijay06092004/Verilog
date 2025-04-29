@@ -1,0 +1,9 @@
+// Gate-level modeling
+module Minority_detector(a, b, c, y);
+input a, b, c;
+output y;
+
+or (y, (~a & ~b), (~b & ~c), (~a & ~c));
+
+endmodule
+
