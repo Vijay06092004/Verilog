@@ -1,0 +1,11 @@
+// behavioural modelling 
+module Full_adder(
+input a,b,c,
+output reg sum,carry
+    );
+   
+   always @ (a or b or c) begin
+    sum = a ^ b ^ c;                     
+    carry = (a & b) | (b & c) | (a & c); 
+    end
+endmodule
