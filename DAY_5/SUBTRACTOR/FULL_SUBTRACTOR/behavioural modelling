@@ -1,0 +1,9 @@
+module full_subtractor (
+    input A, B, Bin,
+    output reg Diff, Bout
+);
+    always @ (A or B or Bin) begin
+        Diff = A ^ B ^ Bin;
+        Bout = (~A & B) | (B & Bin) | (~A & Bin);
+    end
+endmodule
