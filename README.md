@@ -3,3 +3,4 @@ Learning series of VLSI 🎯
 
 ➡️#DAY_1 : AND GATE , NOT GATE & BUFFER ❤️‍🔥
 ➡️#DAY_2 : OR GATE , EX-OR GATE & EX-NOR ❤️‍🔥
+➡️#DAY_2 : 
