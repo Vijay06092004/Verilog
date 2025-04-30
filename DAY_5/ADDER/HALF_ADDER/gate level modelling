@@ -1,0 +1,12 @@
+// gate level modelling
+module half_adder (
+    input wire a,
+    input wire b,
+    output wire sum,
+    output wire carry
+);
+
+xor (sum, a, b);    // XOR gate for sum
+and (carry, a, b);  // AND gate for carry
+
+endmodule
