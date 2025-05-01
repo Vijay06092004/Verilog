@@ -1,0 +1,35 @@
+// TEST BENCH
+module tb_parallel_adder(  );
+   
+    reg [2:0] A;
+    reg [2:0] B;
+    reg Cin;
+
+    wire [2:0] Sum;
+    wire Cout;
+
+   parallel_adder dut (
+        .A(A), 
+        .B(B), 
+        .Cin(Cin), 
+        .Sum(Sum), 
+        .Cout(Cout)
+    );
+
+    initial begin
+    
+        $monitor("Time=%0d A=%b B=%b Cin=%b | Sum=%b Cout=%b",$time, A, B, Cin, Sum, Cout);
+
+       
+        A = 3'b000; B = 3'b000; Cin = 0; #10;
+        A = 3'b001; B = 3'b001; Cin = 0; #10;
+        A = 3'b010; B = 3'b011; Cin = 1; #10;
+        A = 3'b111; B = 3'b111; Cin = 0; #10;
+        A = 3'b101; B = 3'b010; Cin = 1; #10;
+        A = 3'b100; B = 3'b011; Cin = 1; #10;
+        A = 3'b110; B = 3'b001; Cin = 0; #10;
+        A = 3'b011; B = 3'b011; Cin = 1; #10;
+
+        $finish;
+    end
+endmodule
