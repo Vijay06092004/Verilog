@@ -1,4 +1,4 @@
-Learning series of VLSI 🎯
+🔗 Learning series of VLSI 🎯
 
 
 ➡️#DAY_1 : AND GATE , NOT GATE & BUFFER ❤️‍🔥
