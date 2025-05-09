@@ -1,8 +1,8 @@
-# 🔥 100 Days of RTL Challenge
+# 🔥 150 Days of RTL Challenge
 
 [![verilog](https://img.shields.io/badge/verilog-100.0%25-blue)]()
 ![Stars](https://img.shields.io/badge/stars-4-lightgrey)
-![License: MIT](https://img.shields.io/badge/license-MIT-green)
+
 
 😊 Welcome to my **100 Days of RTL challenge** repository!
 
