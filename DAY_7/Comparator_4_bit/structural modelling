@@ -1,0 +1,15 @@
+module Comparator_4_bit(a,b,x,y,z);
+input  [3:0] a;
+input [3:0] b;
+output x;
+output y;
+output z;
+  
+    
+    assign x = a < b;
+    assign y = a == b;
+    assign z = a > b;
+
+endmodule
+
+ 
