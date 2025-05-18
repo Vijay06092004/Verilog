@@ -1,0 +1,19 @@
+`timescale 1ns / 1ps
+
+module Adder_subtractor (
+    input  [3:0] A,
+    input  [3:0] B,
+    input        mode,      // 0 for addition, 1 for subtraction
+    output reg [3:0] Sum,
+    output reg       Cout
+);
+
+always @(*) begin
+    if (mode == 0) begin
+        {Cout, Sum} = A + B;
+    end else begin
+        {Cout, Sum} = A + (~B + 1);  // Two's complement subtraction
+    end
+end
+
+endmodule
