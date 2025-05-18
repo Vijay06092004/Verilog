@@ -1,0 +1,44 @@
+module serial_adder_tb;
+    reg clk, reset, shift_control, serial_in;
+    wire sum_out;
+
+    serial_adder uut (
+        .clk(clk),
+        .reset(reset),
+        .shift_control(shift_control),
+        .serial_in(serial_in),
+        .sum_out(sum_out)
+    );
+
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+    initial begin
+        reset = 1;
+        shift_control = 0;
+        serial_in = 0;
+        #10;
+
+        reset = 0;
+        shift_control = 1;
+
+        // Example: Add 8'b00000101 (5) + 8'b00000011 (3)
+        // Serial input bits for A: 1 0 1 0 0 0 0 0
+        // Serial input bits for B: 1 1 0 0 0 0 0 0
+
+        repeat (8) begin
+            serial_in = 1; #10; // LSB of A and B
+            serial_in = 0; #10;
+            serial_in = 1; #10;
+            serial_in = 0; #10;
+            serial_in = 0; #10;
+            serial_in = 0; #10;
+            serial_in = 0; #10;
+            serial_in = 0; #10;
+        end
+        #50;
+        $finish;
+    end
+endmodule
