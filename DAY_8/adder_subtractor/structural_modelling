@@ -1,0 +1,33 @@
+module fulladder (
+    output Sum,
+    output Cout,
+    input A,
+    input B,
+    input Cin
+);
+    assign {Cout, Sum} = A + B + Cin;
+endmodule
+
+module Adder_subtractor (
+    input  [3:0] A,
+    input  [3:0] B,
+    input        mode,    // 0 = add, 1 = subtract
+    output [3:0] Sum,
+    output       Cout
+);
+
+    wire [4:0] C;
+    wire [3:0] b;
+
+    // XOR B bits with mode to conditionally invert B for subtraction
+    assign b = B ^ {4{mode}};
+    assign C[0] = mode;  // Carry-in is mode (0 for add, 1 for subtract)
+
+    fulladder A1 (Sum[0], C[1], A[0], b[0], C[0]);
+    fulladder A2 (Sum[1], C[2], A[1], b[1], C[1]);
+    fulladder A3 (Sum[2], C[3], A[2], b[2], C[2]);
+    fulladder A4 (Sum[3], C[4], A[3], b[3], C[3]);
+
+    assign Cout = C[4];
+
+endmodule
