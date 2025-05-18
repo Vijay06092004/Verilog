@@ -1,0 +1,36 @@
+`timescale 1ns / 1ps
+
+module test_bench;
+    reg  [3:0] A, B;
+    reg        mode;         // mode = 0: addition, mode = 1: subtraction
+    wire [3:0] Sum;
+    wire       Cout;
+
+    // Instantiate the Unit Under Test (UUT)
+    Adder_subtractor uut (A, B, mode, Sum, Cout);
+
+    initial begin
+        $display("Time\tA\tB\tMode\tSum\tCout");
+        $monitor("%0dns\t%b\t%b\t%b\t%b\t%b", $time, A, B, mode, Sum, Cout);
+
+        // Initial state
+        A = 4'b0000; B = 4'b0000; mode = 0; #10;
+
+        // ------------------------
+        // Addition operations
+        // ------------------------
+        #10 A = 4'b0101; B = 4'b0011; mode = 0;  // 5 + 3 = 8
+        #10 A = 4'b1110; B = 4'b0001; mode = 0;  // 14 + 1 = 15
+        #10 A = 4'b1010; B = 4'b0101; mode = 0;  // 10 + 5 = 15
+
+        // ------------------------
+        // Subtraction operations
+        // ------------------------
+        #10 A = 4'b0101; B = 4'b0011; mode = 1;  // 5 - 3 = 2
+        #10 A = 4'b1110; B = 4'b0001; mode = 1;  // 14 - 1 = 13
+        #10 A = 4'b1000; B = 4'b0101; mode = 1;  // 8 - 5 = 3
+
+        #10;
+        $finish;
+    end
+endmodule
