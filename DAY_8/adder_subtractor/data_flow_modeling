@@ -1,0 +1,24 @@
+`timescale 1ns / 1ps
+
+module adder_subtractor_dataflow (
+    input  [3:0] A,
+    input  [3:0] B,
+    input        mode,   // 0 = add, 1 = subtract
+    output [3:0] Sum,
+    output       Cout
+);
+
+    wire [3:0] b;
+    wire [4:0] result;
+
+    // XOR B with mode to conditionally invert B for subtraction
+    assign b = B ^ {4{mode}};
+
+    // Add A + modified B + mode (carry-in)
+    assign result = A + b + mode;
+
+    // Assign sum and carry out
+    assign Sum = result[3:0];
+    assign Cout = result[4];
+
+endmodule
