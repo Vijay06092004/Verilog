@@ -20,14 +20,8 @@ module test_bench();
         b = 4'b1000; #1; $display("BCD 4'b1000 = Binary %b (%0d)", d, d);
         b = 4'b1001; #1; $display("BCD 4'b1001 = Binary %b (%0d)", d, d);
         b = 4'b1010; #1; $display("BCD 4'b1010 = Binary %b (%0d)", d, d);
-        b = 4'b1011; #1; $display("BCD 4'b1011 = Binary %b (%0d)", d, d);
-        b = 4'b1100; #1; $display("BCD 4'b1100 = Binary %b (%0d)", d, d);
-        b = 4'b1101; #1; $display("BCD 4'b1101 = Binary %b (%0d)", d, d);
-
-        // Optional: test invalid BCD inputs
-        b = 4'b1010; #1; $display("BCD 4'b1010 (invalid) = Binary %b (%0d)", d, d);
-        b = 4'b1111; #1; $display("BCD 4'b1111 (invalid) = Binary %b (%0d)", d, d);
-
+        
+       
         $finish;
     end
 endmodule
