@@ -1,0 +1,13 @@
+module BCD_to_binary(
+    input  [3:0] b,
+    output reg [3:0] d
+);
+
+always @(*) begin
+    d[0]=b[0];
+    d[1]=b[1];
+    d[2]=b[2];
+    d[3]=b[3];
+    
+end
+endmodule
