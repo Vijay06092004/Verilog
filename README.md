@@ -12,7 +12,17 @@ In this project, I will be coding 💻 various **digital designs using Verilog a
 
 ## Progress 📅
 
-- **Day 1:** Full Adder  
-- **Day 2:** Carry Lookahead Adder  
-- **Day 3:** 16:1 Multiplexer  
-- **Day 4:** 3:8 Decoder
+- **Day 1:**:
+- **Day 2:**:
+- **Day 3:**:
+- **Day 4:**:
+- **Day 5:**:
+- **Day 6:**:
+- **Day 7:**:
+- **Day 8:**:
+- **Day 9:**:
+- **Day 10:**: **conversion of binary to gray & gray to binary**
+- **Day 11:**:
+- **Day 12:**:
+-   
+-   
