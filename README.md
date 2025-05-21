@@ -4,7 +4,7 @@
 ![Stars](https://img.shields.io/badge/stars-4-lightgrey)
 
 
-😊 Welcome to my **100 Days of RTL challenge** repository!
+😊 Welcome to my **150 Days of RTL challenge** repository!
 
 In this project, I will be coding 💻 various **digital designs using Verilog and RTL design** techniques as part of a 100-day challenge to improve my **Hardware Description Language (HDL)** skills 😊
 
