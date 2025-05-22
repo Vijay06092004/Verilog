@@ -1,1 +1,7 @@
+module binary_to_excess_3 (
+    input [3:0] binary_in,
+    output [3:0] excess3_out
+);
+    assign excess3_out = binary_in + 4'b0011; // Add 3 to binary input
+endmodule
 
