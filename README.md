@@ -12,8 +12,8 @@ In this project, I will be coding 💻 various **digital designs using Verilog a
 
 ## Progress 📅
 
-- **Day 1:**:
-- **Day 2:**: 
+- **Day 1:**: **Basic_gates(AND gate & OR gate & NOT gate & buffer Gate)**
+- **Day 2:**: **Exclusive gates(EX_OR & EX_nor gates)**
 - **Day 3:**: **universal gates(NAND gate & NOR gate)**
 - **Day 4:**: **majarity detector & minority detector**
 - **Day 5:**: **adder & subtractor**
