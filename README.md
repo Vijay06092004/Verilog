@@ -15,7 +15,7 @@ In this project, I will be coding 💻 various **digital designs using Verilog a
 - **Day 1:**:
 - **Day 2:**:
 - **Day 3:**:
-- **Day 4:**:
+- **Day 4:**: **majarity detector & minority detector**
 - **Day 5:**: **adder & subtractor**
 - **Day 6:**: **Ripple carry adder & look ahead carry adder**
 - **Day 7:**:  **Comparator 4_bit & 1_bit**
