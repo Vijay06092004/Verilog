@@ -1,0 +1,6 @@
+module excess_3_to_binary(
+    input [3:0] excess3,  
+    output [3:0] binary   
+);
+    assign binary = excess3 - 4'b0011; 
+endmodule
