@@ -19,7 +19,7 @@ In this project, I will be coding 💻 various **digital designs using Verilog a
 - **Day 5:**: **adder & subtractor**
 - **Day 6:**: **Ripple carry adder & look ahead carry adder**
 - **Day 7:**:  **Comparator 4_bit & 1_bit**
-- **Day 8:**: **adder-subtractor & serial adder**
+- **Day 8:**: **parallel adder-subtractor & serial adder**
 - **Day 9:**:  **conversion of binary to gray & gray to binary**
 - **Day 10:**: **conversion of binary to BCD & BCD to binary**
 - **Day 11:**: **conversion of binary to Excess-3 & Excess-3 to binary**
