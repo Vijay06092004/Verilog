@@ -16,7 +16,7 @@ In this project, I will be coding 💻 various **digital designs using Verilog a
 - **Day 2:**: **Exclusive gates(EX_OR & EX_nor gates)**
 - **Day 3:**: **universal gates(NAND gate & NOR gate)**
 - **Day 4:**: **majarity detector & minority detector**
-- **Day 5:**: **adder & subtractor**
+- **Day 5:**: **adder & subtractor(half & full)**
 - **Day 6:**: **Ripple carry adder & look ahead carry adder**
 - **Day 7:**:  **Comparator 4_bit & 1_bit**
 - **Day 8:**: **parallel adder-subtractor & serial adder**
