@@ -23,6 +23,7 @@ In this project, I will be coding 💻 various **digital designs using Verilog a
 - **Day 9:**:  **conversion of binary to gray & gray to binary**
 - **Day 10:**: **conversion of binary to BCD & BCD to binary**
 - **Day 11:**: **conversion of binary to Excess-3 & Excess-3 to binary**
-- **Day 12:**: **even parity & odd parity**
+- **Day 12:**: **even parity generater & odd parity generater**
+- **Day 13:**: **even parity checker & odd parity checker**
 -   
 -   
