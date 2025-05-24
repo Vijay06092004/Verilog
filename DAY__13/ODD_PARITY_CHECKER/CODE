@@ -1,0 +1,7 @@
+module odd_parity_checker(a,b,c,p,y);
+// p=parity
+input a,b,c,p;
+output y;
+
+assign y = ~(~(a^ b) ^ ~(c ^ p));
+endmodule
