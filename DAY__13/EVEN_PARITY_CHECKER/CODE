@@ -1,0 +1,8 @@
+module EVEN_PARITY_CHECKER(a,b,c,p,y);
+// p=parity
+input a,b,c,p;
+output y;
+
+assign y = ((a^ b) ^ (c ^ p));
+
+endmodule
