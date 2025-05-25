@@ -25,5 +25,5 @@ In this project, I will be coding 💻 various **digital designs using Verilog a
 - **Day 11:**: **conversion of binary to Excess-3 & Excess-3 to binary**
 - **Day 12:**: **even parity generater & odd parity generater**
 - **Day 13:**: **even parity checker & odd parity checker**
--   
+- **Day 14:**: **Multiplexer and Demultiplexer**
 -   
