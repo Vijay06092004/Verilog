@@ -1,0 +1,14 @@
+module Mux2x1(d,s,y);
+input [1:0] d;
+input s;
+output reg y;
+
+
+
+always@(*) begin
+//behavioural modelling
+y = (~s) & d[0] | s & d[1];
+end
+
+
+endmodule
