@@ -1,0 +1,13 @@
+module Mux2x1(d,s,y);
+input [1:0] d;
+input s;
+output reg y;
+
+always@(*) begin
+// data flow modelling
+y = s ? d[1] : d[0];
+
+end
+
+
+endmodule
