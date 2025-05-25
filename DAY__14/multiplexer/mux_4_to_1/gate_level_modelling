@@ -1,0 +1,24 @@
+
+
+module mux_4_to_1(
+    input  [3:0] d,
+    input  [1:0] s,
+    output       y
+);
+
+// Gate-level modeling
+wire ns0, ns1;
+wire w0, w1, w2, w3;
+
+not (ns0, s[0]);
+not (ns1, s[1]);
+
+and (w0, d[0], ns1, ns0);  // s = 00
+and (w1, d[1], ns1, s[0]); // s = 01
+and (w2, d[2], s[1], ns0); // s = 10
+and (w3, d[3], s[1], s[0]); // s = 11
+
+or (y, w0, w1, w2, w3);
+
+
+endmodule
