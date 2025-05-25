@@ -1,0 +1,17 @@
+module Mux2x1(d,s,y);
+input [1:0] d;
+input s;
+output reg y;
+
+
+// gate level modelling
+wire ns,w1,w2;
+
+not (ns,s);
+and (w1,ns,d[0]);
+and (w2,s,d[1]);
+or (y,w1,w2);
+
+
+
+endmodule
