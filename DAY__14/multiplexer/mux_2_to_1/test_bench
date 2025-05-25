@@ -1,0 +1,16 @@
+
+module test_bench(  );
+reg [1:0] d;
+reg s;
+wire y;
+
+Mux2x1 uut (.d(d), .s(s), .y(y));
+initial begin 
+   $monitor(",d=%b,s=%b,y=%b",d,s,y);
+   d=2'b00; s=1'b0; #10;
+   d=2'b01; s=1'b0; #10;
+   d=2'b10; s=1'b1; #10;
+   d=2'b11; s=1'b1; #10;
+   $finish;
+end 
+endmodule
