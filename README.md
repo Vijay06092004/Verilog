@@ -27,4 +27,6 @@ In this project, I will be coding 💻 various **digital designs using Verilog a
 - **Day 13:**: **even parity checker & odd parity checker**
 - **Day 14:**: **Multiplexer and Demultiplexer**
 - **Day 15:**: **Decoder and Encoder**
+- **Day 16:**: **parity Encoder**
+- **Day 17:**: **Binary to gray code using 3:8 & 8:3 decoder**
 -   
