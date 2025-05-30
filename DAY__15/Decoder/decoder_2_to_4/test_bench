@@ -1,0 +1,14 @@
+module test_bench(    );
+reg [0:1] a;
+wire [3:0] y;
+
+decoder_2_to_4 uut(.a(a), .y(y));
+
+initial begin
+   a=2'b00; #100;
+   a=2'b01; #100;
+   a=2'b10; #100;
+   a=2'b11; #100;
+   $finish;
+end
+endmodule
