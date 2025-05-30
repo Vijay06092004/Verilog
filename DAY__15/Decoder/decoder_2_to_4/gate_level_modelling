@@ -1,0 +1,16 @@
+module decoder_2_to_4(
+input a0,a1,
+
+output y0,y1,y2,y3
+);
+
+wire na0,na1;
+
+not (na0,a0);
+not (na1,a1);
+
+and(y0,a0,a1);
+and(y1,a0,na1);
+and(y2,na1,a1);
+and(y3,na0,na1);
+endmodule
