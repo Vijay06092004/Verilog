@@ -1,0 +1,12 @@
+module Encoder_2_to_4(
+    input [3:0] in,
+    output [1:0] out
+);
+    wire a, b;
+
+    or (a, in[2], in[3]);
+    or (b, in[1], in[3]);
+
+    assign out[1] = a;
+    assign out[0] = b;
+endmodule
