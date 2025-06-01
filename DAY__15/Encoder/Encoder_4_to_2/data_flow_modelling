@@ -1,1 +1,10 @@
+module Encoder_4_to_2(a,y);
+input [3:0] a;
+output reg [1:0] y;
+    
+   always@(*) begin 
+    y[0] = a[3] | a[1];
+    y[1] = a[3] | a[2];
+   end
+endmodule
 
