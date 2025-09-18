@@ -1,0 +1,10 @@
+module decoder3to8 (
+    input  [2:0] in,    // 3-bit input
+    input        en,    // enable signal
+    output [7:0] out    // 8-bit output
+);
+
+    assign out = (en) ? (1 << in) : 8'b00000000;
+
+endmodule
+
