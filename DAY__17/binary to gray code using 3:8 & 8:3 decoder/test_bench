@@ -15,7 +15,6 @@ module tb_binary_to_gray;
       
         $monitor("Time=%0t | Binary=%b | Gray=%b", $time, bin, gray);
 
-        // Apply test inputs
         bin = 3'b000; #10;
         bin = 3'b001; #10;
         bin = 3'b010; #10;
