@@ -1,1 +1,24 @@
+module binary_to_gray_using_decoder (
+    input  [2:0] bin,    
+    output [2:0] gray   
+);
+
+    wire [7:0] dec;
+
+    // 3-to-8 decoder logic
+    assign dec[0] = (~bin[2]) & (~bin[1]) & (~bin[0]);
+    assign dec[1] = (~bin[2]) & (~bin[1]) & ( bin[0]);
+    assign dec[2] = (~bin[2]) & ( bin[1]) & (~bin[0]);
+    assign dec[3] = (~bin[2]) & ( bin[1]) & ( bin[0]);
+    assign dec[4] = ( bin[2]) & (~bin[1]) & (~bin[0]);
+    assign dec[5] = ( bin[2]) & (~bin[1]) & ( bin[0]);
+    assign dec[6] = ( bin[2]) & ( bin[1]) & (~bin[0]);
+    assign dec[7] = ( bin[2]) & ( bin[1]) & ( bin[0]);
+
+
+    assign gray[2] = dec[4] | dec[5] | dec[6] | dec[7]; // MSB
+    assign gray[1] = dec[2] | dec[3] | dec[6] | dec[7];
+    assign gray[0] = dec[1] | dec[2] | dec[5] | dec[6];
+
+endmodule
 
