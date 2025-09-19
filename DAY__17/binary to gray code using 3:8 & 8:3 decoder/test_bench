@@ -1,1 +1,30 @@
 
+`timescale 1ns/1ps
+
+module tb_binary_to_gray;
+    reg  [2:0] bin;    
+    wire [2:0] gray;   
+
+
+    binary_to_gray_using_decoder uut (
+        .bin(bin),
+        .gray(gray)
+    );
+
+    initial begin
+      
+        $monitor("Time=%0t | Binary=%b | Gray=%b", $time, bin, gray);
+
+        // Apply test inputs
+        bin = 3'b000; #10;
+        bin = 3'b001; #10;
+        bin = 3'b010; #10;
+        bin = 3'b011; #10;
+        bin = 3'b100; #10;
+        bin = 3'b101; #10;
+        bin = 3'b110; #10;
+        bin = 3'b111; #10;
+        
+        $stop;
+    end
+endmodule
