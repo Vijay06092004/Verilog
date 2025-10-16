@@ -1,0 +1,98 @@
+module traffic_4way (
+    input clk, 
+    input rst,
+    output reg [2:0] left,
+    output reg [2:0] right,
+    output reg [2:0] straight,
+    output reg [2:0] back
+);
+
+  
+    // Light colors 
+    
+    // 001 = GREEN
+    // 010 = YELLOW
+    // 100 = RED
+  
+
+    // Define the 4 roads (main states)
+  
+    parameter LEFT = 0, RIGHT = 1, STRAIGHT = 2, BACK = 3;
+
+
+    // Timings for green and yellow
+
+    parameter GREEN_TIME = 5;   // green duration
+    parameter YELLOW_TIME = 2;  // yellow duration
+
+
+    // Registers
+
+    reg [1:0] state;     // current road (LEFT/RIGHT/STRAIGHT/BACK)
+    reg [3:0] timer;     // counts time in each color (green or yellow)
+
+
+    // State and Timer Control
+ 
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            state <= LEFT;   // start with LEFT road
+            timer <= 0;
+        end
+        else begin
+            if (timer < GREEN_TIME + YELLOW_TIME)
+                timer <= timer + 1;   // count time for current road
+            else begin
+                timer <= 0;            // reset timer
+                // move to next road
+                case (state)
+                    LEFT: state <= RIGHT;
+                    RIGHT: state <= STRAIGHT;
+                    STRAIGHT: state <= BACK;
+                    BACK: state <= LEFT;
+                    default: state <= LEFT;
+                endcase
+            end
+        end
+    end
+
+
+    // Light Output Logic
+    
+    always @(*) begin
+        // Default: all RED
+        left = 3'b100;
+        right = 3'b100;
+        straight = 3'b100;
+        back = 3'b100;
+
+        // Current active road
+        case(state)
+            LEFT: begin
+                if (timer < GREEN_TIME)
+                    left = 3'b001;     // Green
+                else
+                    left = 3'b010;     // Yellow
+            end
+            RIGHT: begin
+                if (timer < GREEN_TIME)
+                    right = 3'b001;
+                else
+                    right = 3'b010;
+            end
+            STRAIGHT: begin
+                if (timer < GREEN_TIME)
+                    straight = 3'b001;
+                else
+                    straight = 3'b010;
+            end
+            BACK: begin
+                if (timer < GREEN_TIME)
+                    back = 3'b001;
+                else
+                    back = 3'b010;
+            end
+        endcase
+    end
+
+endmodule
