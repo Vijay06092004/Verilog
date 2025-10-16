@@ -1,0 +1,43 @@
+module tb_traffic_4way;
+
+    reg clk;
+    reg rst;
+    wire [2:0] left;
+    wire [2:0] right;
+    wire [2:0] straight;
+    wire [2:0] back;
+
+  
+    traffic_4way uut (
+        .clk(clk),
+        .rst(rst),
+        .left(left),
+        .right(right),
+        .straight(straight),
+        .back(back)
+    );
+
+
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk; 
+    end
+
+
+    initial begin
+
+        rst = 1;
+        #15;          // hold reset for 15 ns
+        rst = 0;      //  reset
+
+        #500;        
+        $stop;    
+    end
+
+  
+    initial begin
+        $display("Time\tleft\tright\tstraight\tback");
+        $monitor("%0dns\t%b\t%b\t%b\t%b", $time, left, right, straight, back);
+    end
+
+endmodule
