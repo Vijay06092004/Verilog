@@ -1,0 +1,20 @@
+// gray_to_binary_decoder.v
+module gray_to_binary_decoder (
+    input  [2:0] gray,      // 3-bit Gray input
+    output reg [2:0] binary // 3-bit Binary output
+);
+
+    always @(*) begin
+        case (gray)
+            3'b000: binary = 3'b000;
+            3'b001: binary = 3'b001;
+            3'b011: binary = 3'b010;
+            3'b010: binary = 3'b011;
+            3'b110: binary = 3'b100;
+            3'b111: binary = 3'b101;
+            3'b101: binary = 3'b110;
+            3'b100: binary = 3'b111;
+            default: binary = 3'b000;
+        endcase
+    end
+endmodule
