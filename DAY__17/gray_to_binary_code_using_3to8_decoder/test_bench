@@ -1,0 +1,30 @@
+// tb_gray_to_binary_decoder.v
+`timescale 1ns/1ps
+module tb_gray_to_binary_decoder;
+
+    reg [2:0] gray;
+    wire [2:0] binary;
+
+    // Instantiate the module
+    gray_to_binary_decoder uut (
+        .gray(gray),
+        .binary(binary)
+    );
+
+    initial begin
+        // Monitor values
+        $monitor("Time=%0t | Gray=%b -> Binary=%b", $time, gray, binary);
+
+        // Apply all 3-bit Gray code inputs
+        gray = 3'b000; #10;
+        gray = 3'b001; #10;
+        gray = 3'b011; #10;
+        gray = 3'b010; #10;
+        gray = 3'b110; #10;
+        gray = 3'b111; #10;
+        gray = 3'b101; #10;
+        gray = 3'b100; #10;
+
+        $finish;
+    end
+endmodule
