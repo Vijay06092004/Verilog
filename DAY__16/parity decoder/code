@@ -1,0 +1,14 @@
+module parity_decoder (
+    input  [7:0] data_in,     
+    output       even_parity, 
+    output       odd_parity   
+);
+
+
+    wire parity_bit;
+
+    assign parity_bit = ^data_in;
+
+    assign odd_parity  = parity_bit;        
+    assign even_parity = ~parity_bit;       
+endmodule
