@@ -1,0 +1,31 @@
+`timescale 1ns/1ps
+
+module tb_parity_decoder;
+
+    reg  [7:0] data_in;
+    wire even_parity;
+    wire odd_parity;
+    parity_decoder uut (
+        .data_in(data_in),
+        .even_parity(even_parity),
+        .odd_parity(odd_parity)
+    );
+
+    initial begin
+        $display("TIME   DATA_IN      EVEN_PARITY   ODD_PARITY");
+        data_in = 8'b00000000; #10;
+        $display("%0t,%b,%b,%b", $time, data_in, even_parity, odd_parity);
+        data_in = 8'b00000001; #10;
+        $display("%0t,%b,%b,%b", $time, data_in, even_parity, odd_parity);
+        data_in = 8'b00000011; #10;
+        $display("%0t,%b,%b,%b", $time, data_in, even_parity, odd_parity);
+        data_in = 8'b01010101; #10;
+        $display("%0t,%b,%b,%b", $time, data_in, even_parity, odd_parity);
+        data_in = 8'b11010110; #10;
+        $display("%0t,%b,%b,%b", $time, data_in, even_parity, odd_parity);
+
+
+        $finish;
+    end
+
+endmodule
