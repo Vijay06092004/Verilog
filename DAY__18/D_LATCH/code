@@ -1,0 +1,10 @@
+module d_latch(D, EN, Q);
+    input D, EN;
+    output Q;
+    wire D1, Q1, ENbar;
+
+    not (ENbar, EN);           // EN'
+    and (D1, D, EN);           // D * EN
+    and (Q1, Q, ENbar);        // Q * EN'
+    or  (Q, D1, Q1);           // Q = D1 + Q1
+endmodule
