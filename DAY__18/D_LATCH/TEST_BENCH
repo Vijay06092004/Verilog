@@ -1,0 +1,14 @@
+module tb_d_latch;
+    reg D, EN;
+    wire Q;
+
+    d_latch dut(D, EN, Q);
+
+    initial begin
+        D=0; EN=0; #10;
+        D=1; EN=1; #10;
+        D=0; EN=1; #10;
+        EN=0; D=1; #10;
+        $finish;
+    end
+endmodule
