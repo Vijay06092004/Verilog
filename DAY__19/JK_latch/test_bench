@@ -1,0 +1,19 @@
+
+module tb_jk_latch;
+reg j,k,en;
+wire Q;
+
+jk_latch dut(j,k,en,Q);
+
+initial begin
+          $monitor("Time=%0t j=%b k=%b en=%b Q=%b", $time,j,k,en,Q);
+        
+        en=0 ; j=0 ; k=0; #10;
+        en=1 ; j=0 ; k=0; #10;
+        en=1 ; j=0 ; k=1; #10;
+        en=1 ; j=1 ; k=0; #10;
+        en=1 ; j=1 ; k=1; #10;   
+        $stop;
+         end
+
+endmodule
