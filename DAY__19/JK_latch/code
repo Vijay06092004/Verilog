@@ -1,0 +1,14 @@
+
+module jk_latch(j,k,en,Q);
+input j, k, en;
+output Q;
+wire Q_bar;
+wire n1,n2;
+
+assign n1 = ~(j&en&Q_bar);
+assign n2 = ~(k&en&Q);
+
+assign Q=n1;
+assign Q_bar=n2;
+
+endmodule
